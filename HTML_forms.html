@@ -1,0 +1,54 @@
+<!-- IN HTML we Use Forms for collecting user input as well as for user authentication -->
+ <!-- Ex registeration form
+  Login Form with authentication & Authorization 
+  Steps for IMPLEMENTING html FORMS 
+  STEP 1:  cREATE A SAMPLE html APPLICATION 
+  STEP 2:  ADD FORM ELEMENTS LIKE INPUT, SELECT, TEXTAREA, BUTTONS ETC
+  STEP 3:  ADD FORM ATTRIBUTES LIKE ACTION, METHOD ETC Get / post
+    STEP 4:  TEST THE FORM IN BROWSER 
+    Step 5: Displaying Form Data on  dialog box or console (optional)
+   -->
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>HTML Forms Demo</title>
+</head>
+<body>
+    <h1>HTML Forms Example</h1>
+    <form action="/submit_form" method="post">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br><br>
+        
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <!-- below is a javascript for displaying form data  -->
+    <script> 
+        // Optional: Display form data in console on submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            const formData = new FormData(event.target);
+            console.log('Form Data:');
+            for (const [name, value] of formData) {
+                console.log(`${name}: ${value}`);
+            }
+            alert('Form submitted! Check console for data.');
+        });
+    </script>
+</body>
+</html>
