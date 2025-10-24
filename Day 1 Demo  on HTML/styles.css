@@ -1,0 +1,19 @@
+defining styles for the document
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 25px;
+}
+h1 {
+    color: grey;
+    text-align: center;
+}
+h2 {
+    color: azure;
+}
+p {
+    font-size: 16px;
+}
+.external-style {
+    color: red;
+}

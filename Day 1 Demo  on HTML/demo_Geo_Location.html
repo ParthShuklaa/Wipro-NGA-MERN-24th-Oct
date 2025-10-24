@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Demo - Delhi, India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #1a2a6c;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fdbb2d;
+        }
+        
+        .map-container {
+            height: 300px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            color: #6c757d;
+        }
+        
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+            color: #1a2a6c;
+        }
+        
+        .location-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            width: 120px;
+            color: #1a2a6c;
+        }
+        
+        .coordinates {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .coordinate {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: #1a2a6c;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .coordinate-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .demo-note {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #1a2a6c;
+            color: white;
+        }
+        
+        address {
+            font-style: normal;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .coordinates {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Geolocation HTML Demo</h1>
+            <p class="subtitle">A demonstration of geographic concepts using HTML5 elements and semantic markup</p>
+        </header>
+        
+        <div class="content">
+            <div class="card">
+                <h2>Location Information</h2>
+                <p>This demo shows how geographic information could be structured in HTML.</p>
+                
+                <div class="location-info">
+                    <div class="info-item">
+                        <span class="info-label">Country:</span>
+                        <span>India</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">City:</span>
+                        <span>Delhi</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Timezone:</span>
+                        <span>IST (UTC+5:30)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Language:</span>
+                        <span>Hindi, English</span>
+                    </div>
+                </div>
+                
+                <div class="coordinates">
+                    <div class="coordinate">
+                        <div>Latitude</div>
+                        <div class="coordinate-value">28.6261° N</div>
+                    </div>
+                    <div class="coordinate">
+                        <div>Longitude</div>
+                        <div class="coordinate-value">77.2243° E</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Map Visualization</h2>
+                <p>A representation of how geographic data might be displayed.</p>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i>🗺️</i>
+                        <h3>Interactive Map</h3>
+                        <p>Coordinates: 28.6261° N, 77.2243° E</p>
+                        <p>Location: Delhi, India</p>
+                    </div>
+                </div>
+                
+                <p><strong>Note:</strong> Actual geolocation requires JavaScript. This is a static representation.</p>
+            </div>
+            
+            <div class="card">
+                <h2>Geographic Features</h2>
+                <p>HTML5 provides semantic elements for marking up geographic content.</p>
+                
+                <h3>Address Format</h3>
+                <address>
+                    Connaught Place<br>
+                    New Delhi, Delhi 110001<br>
+                    India
+                </address>
+                
+                <h3>Time Element</h3>
+                <p>Current time in location: <time datetime="2023-10-15T14:30:00+05:30">2:30 PM IST</time></p>
+                
+                <h3>Sample Geographic Data</h3>
+                <table>
+                    <tr>
+                        <th>Location</th>
+                        <th>Coordinates</th>
+                    </tr>
+                    <tr>
+                        <td>India Gate</td>
+                        <td>28.6129° N, 77.2295° E</td>
+                    </tr>
+                    <tr>
+                        <td>Red Fort</td>
+                        <td>28.6562° N, 77.2410° E</td>
+                    </tr>
+                    <tr>
+                        <td>Qutub Minar</td>
+                        <td>28.5245° N, 77.1855° E</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="demo-note">
+            <h2>About This Demo</h2>
+            <p>This page demonstrates how geographic information can be structured using HTML5 elements.</p>
+            <p>While actual geolocation requires JavaScript, this shows the semantic markup that could be used to display location data.</p>
+            <p>HTML5 elements like <code>&lt;address&gt;</code>, <code>&lt;time&gt;</code>, and semantic structure help create meaningful geographic content.</p>
+            <p><strong>Coordinates used:</strong> Latitude: 28.6261248, Longitude: 77.2243456 (Delhi, India)</p>
+        </div>
+        
+        <footer>
+            <p>Geolocation HTML Demo | Created with HTML5 and CSS3</p>
+        </footer>
+    </div>
+</body>
+</html>

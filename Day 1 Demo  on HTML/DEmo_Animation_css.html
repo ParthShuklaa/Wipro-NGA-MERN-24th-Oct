@@ -1,0 +1,142 @@
+<!-- Basic Animation using CSS with following steps  -->
+    <!-- 1. Define the keyframes for the animation using @keyframes rule.
+    2. Set the animation properties on the element you want to animate.
+    3. Customize the animation duration, timing function, delay, iteration count, and direction as needed. -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- Analog Clock Animation  using CSS-->
+        <div class="clock">
+            <div class="hour-hand"></div>
+            <div class="minute-hand"></div>
+            <div class="second-hand"></div>
+        </div>
+        <style>
+            .clock {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border: 8px solid black;
+                border-radius: 50%;
+                margin: 50px auto;
+                background: white;
+            }
+            .hour-hand, .minute-hand, .second-hand {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform-origin: bottom center;
+                background: black;
+            }
+            .hour-hand {
+                width: 6px;
+                height: 50px;
+                animation: rotateHour 43200s linear infinite; /* 12 hours */
+            }
+            .minute-hand {
+                width: 4px;
+                height: 70px;
+                animation: rotateMinute 3600s linear infinite; /* 60 minutes */
+            }
+            .second-hand {
+                width: 2px;
+                height: 90px;
+                background: red;
+                animation: rotateSecond 60s linear infinite; /* 60 seconds */
+            }
+
+            @keyframes rotateHour {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            @keyframes rotateMinute {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            @keyframes rotateSecond {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+
+        <h1>Basic Animation using CSS</h1>
+
+        /* <!-- Bouncing ball Animation
+        <div class="ball"></div>
+        <style>
+            .ball {
+                width: 50px;
+                height: 50px;
+                background-color: orange;
+                border-radius: 50%;
+                position: relative;
+                animation-name: bounce;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+
+            @keyframes bounce {
+                0% { top: 0; }
+                50% { top: 200px; }
+                100% { top: 0; }
+            }        --> */
+        /* <!-- <div class="box"></div>
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: relative;
+                animation-name: moveRight;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+            }
+
+            @keyframes moveRight {
+                0% { left: 0; background-color: red; }
+                50% { left: 200px; background-color: blue; }
+                100% { left: 0; background-color: red; }
+            } --> */
+
+        </style>
+    
+
+    <!-- Creating a Heart symbol using CSS -->
+    <div class="heart"></div>
+    <style>
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: red;
+            border-radius: 50px 50px 0 0;
+        }
+        .heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0% 100%;
+        }
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+    </style>
+     </body>
+    </html>
