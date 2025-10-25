@@ -1,0 +1,42 @@
+<!-- here we will have all the business logic related to To Do app for HTML -->
+ <!-- Following are some user stories based on creating To Do Application -->
+ <!-- 1. As a user, I want to add a new task to my To Do list so that I can keep track of my tasks.
+ 2. As a user, I want to mark a task as complete so that I can see which tasks I have finished.
+ 3. As a user, I want to delete a task from my To Do list so that I can remove tasks I no longer need to do.
+ 4. As a user, I want to edit an existing task so that I can update its details.
+ 5. As a user, I want to filter tasks by their completion status (e.g., all, active, completed) so that I can focus on specific tasks. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adding external css Link -->
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>To Do Application</h1>
+    <div>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button id="addTaskButton">Add Task</button>
+        <!-- Creating a delete button -->
+        <button id="deleteTaskButton">Delete Completed Tasks</button>
+    </div>
+    <ul id="taskList">
+        <!-- Task items will be added here dynamically -->
+         <!-- Task will be created/deleted with the help of DOM manipulation when it is required  -->
+    </ul>
+
+    <script src="script.js"></script>
+    <!-- calling addTask function -->
+    <script>
+        addTask();
+
+    </script>
+    <!-- calling deleteTask function -->
+    <script>
+        deleteCompletedTasks();
+    </script>
+ </body>
+ </html>
