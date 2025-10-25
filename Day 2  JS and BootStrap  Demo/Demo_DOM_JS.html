@@ -1,0 +1,81 @@
+<!-- DOM in JS is programing Interface for HTMl and XML documents  -->
+
+
+<!-- Below HTML is represented in a tree structure -->
+ Document : Root of the DOM tree
+  ├── html 
+       ├── head
+       │    ├── meta
+       │    ├── meta
+       │    └── title
+       └── body
+            ├── h1
+            └── ul
+                 ├── li
+                 ├── li
+                 └── li
+
+                 <!-- Element node represents an HTML element -->
+                  <!-- Attribute node represents an attribute of an element  id="main" , class="container" -->
+                     <!-- Text node represents the text content of an element or attribute -->
+                      <!-- Comment Node that represents comments in the HTML code -->
+<!-- Accessing DOM Elements we can use following Methods() -->
+<!--
+Document.getElementById()  It selects the element by its ID
+Document.GetElementByClassName() It selects elements by their class name
+Document.getElementsByTagName() It selects elements by their tag name
+Document.querySelector() It selects the first element that matches a CSS selector
+Document.querySelectorAll() It selects all elements that match a CSS selector
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h1>This is a DOM Demo Page</h1>
+        <p>This paragraph is inside the main div and we will change the text using DOM in JS</p>
+    </div>
+    <script>
+        // Accessing the element by its ID
+        let mainDiv = document.getElementById("main"); 
+        // Here mainDiv now references the div with id "main" and hence can be used to manipulate it.
+        // Changing the text content of the paragraph inside the div
+        mainDiv.getElementsByTagName("p")[0].textContent = "The text has been changed using DOM manipulation in JavaScript!";
+    </script>
+
+    <!-- We can create a button to change the text -->
+    <button onclick="changeText()">Change Text</button>
+    <script>
+        function changeText() {
+            mainDiv.getElementsByTagName("p")[0].textContent = "The text has been changed  USING BUTTON CLICK VIA  DOM manipulation in JavaScript!";
+            // SETTING CSS PROPERTIES USING DOM
+            mainDiv.style.backgroundColor = "#f0f8ff"; // Changing background color
+            mainDiv.style.padding = "10px"; // Adding padding
+            mainDiv.style.border = "1px solid #ccc"; // Adding border
+        }
+    </script>
+</body>
+</html>
+
+<!-- FOLLOWING ARE THE STEPS FOR PERFORMING ABOVE DEMO based on DOM Manipulation -->
+1. Access the DOM element using `document.getElementById("main")`.
+2. Change the text content of the paragraph using `textContent`.
+3. Modify the CSS properties of the element using `style.propertyName`.
+
+<!--  We can use following for changing attributes  -->
+  <!-- .setAttribute() for setting attributes -->
+    <!-- .getAttribute() for getting attributes -->
+    <!-- .removeAttribute() for removing attributes -->
+
+    <!-- We can use Changing CSS styles -->
+    <!-- element.style.propertyName = "value";  Changes inline styles -->
+    <!-- element.classList.add("className");  Adds a class -->
+     <!-- element.classList.remove("className");  Removes a class -->
+<!-- element.classList.toggle("className");  Toggles a class on/off -->
