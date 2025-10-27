@@ -1,0 +1,102 @@
+<!-- Following are the standard features of ES 6 -->
+<!-- <ul>
+  <li>Arrow Functions</li>
+  <li>Classes</li>
+  <li>Template Literals</li>
+  <li>Destructuring Assignment</li>
+  <li>Default Parameters</li>
+  <li>Rest and Spread Operators</li>
+  <li>Promises</li>
+  <li>Modules</li>
+</ul> -->
+
+<!-- Expanding arrays or object  via spread Operator  into individual elements -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example of Spread Operator with Arrays
+        const numbers = [1, 2, 3];
+        const newNumbers = [...numbers, 4, 5, 6];
+        console.log("New Numbers Array:", newNumbers); // Output: [1, 2, 3, 4, 5, 6]
+
+        // Example of Spread Operator with Objects
+        const person = { name: "Alice", age: 25 };
+        const updatedPerson = { ...person, city: "New York" };
+        console.log("Updated Person Object:", updatedPerson); // Output: { name: "Alice", age: 25, city: "New York" }
+    </script>
+    <!-- You can try creating a Student object  and add ID  to it  -->
+    <script>
+        const student = { name: "Bob", age: 20 };
+        const updatedStudent = { ...student, id: 123 };
+        console.log("Updated Student Object:", updatedStudent); // Output: { name: "Bob", age: 20, id: 123 }
+    </script>
+<!-- in JS we  have Arrow Functions  ie lambda  Function: its purpose is to shorten the syntax of writing functions -->
+    <!-- Using arrow functions we can decrese the complexity  in a single line implementation  -->
+    <!-- <script>
+        // Traditional Function
+        function add(a, b) {
+            return a + b;
+        }
+        console.log("Sum using traditional function:", add(2, 3)); // Output: 5
+
+        // Arrow Function
+        const multiply = (a, b) => a * b;
+        console.log("Product using arrow function:", multiply(2, 3)); // Output: 6
+        // Create a arrow function to calculate square of a number
+        const square = x => x * x;
+        console.log("Square using arrow function:", square(4)); // Output: 16
+    </script> -->
+    <!-- in ES6 we can use OOP (Object-Oriented Programming) concepts more easily -->
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            // we can define methods inside the class
+            greet() { 
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            }
+        }
+        // we can create objects using the class
+        const alice = new Person("Alice", 25);
+        alice.greet(); // Output: Hello, my name is Alice and I am 25 years old.
+        // Display details in dialog box
+        alert(`Person Details:\nName: ${alice.name}\nAge: ${alice.age}`);
+    
+    </script>
+
+    <!-- In Js we have map & Set collections via which we can store unique values -->
+     <!-- Map() is a collection of key-value pairs ex  username and password, Transaction details etc -->
+        <!-- Set() is a collection of unique values ex  unique user IDs, unique product codes etc -->
+<script>
+        // Example of Map
+        const map = new Map();
+        map.set("name", "Alice");
+        map.set("age", 25);
+        console.log("Map Example:");
+        map.forEach((value, key) => {
+            console.log(`${key}: ${value}`);
+        });
+
+        // Example of Set
+        const set = new Set();
+        set.add(1);
+        set.add(2);
+        set.add(2); // Duplicate value, will be ignored
+        console.log("Set Example:");
+        set.forEach(value => {
+            console.log(value);
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!-- Implementing Promises in ES6 -->
+ <!-- Promises are used to handle asynchronous(ex  API calls, file reading) operations in JavaScript. -->
+  <!-- API Call Example step by step from a perspective of restaurant -->
+   <!-- Step 1: You order something to eat Waiter takes your order -->
+   <!-- Step 2: Kitchen prepares your food (this takes time) -->
+   <!-- Step 3: Once food is ready, waiter brings it to your table -->
+<!-- here Asynchronous behavior is simulated using Promises -->
+ <!-- English meaning of Asynchronous: Not occurring at the same time ex in  a e commerce website  following things are asynchronous: -->
+<!-- 1. Loading products -->
+<!-- 2. Fetching user data -->
+<!-- 3. Processing payments -->
+ <!-- hence we need timers to simulate delays -->
+ <!-- below things are synchronous:  Means they happen in a sequence -->
+<!-- 1. Rendering UI components -->
+<!-- 2. Handling user input -->
+<!-- 3. Updating the DOM -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Simulating API Call with Promises
+        function orderFood() { 
+            return new Promise((resolve, reject) => {
+                // resolve  and reject are callback functions that we can call based on the outcome of the asynchronous operation
+                // Simulating a delay for food preparation
+                console.log("Step 1: You order something to eat.");
+                setTimeout(() => {
+                    console.log("Step 2: Kitchen prepares your food.");
+                    resolve("Food is ready!");
+                }, 2000);
+                // 2000 is 2 seconds delay
+            });
+        }
+
+        function serveFood() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Step 3: Waiter brings food to your table.");
+                    resolve();
+                }, 1000); // 1 second delay
+            });
+        }
+
+        // Using the Promises
+        orderFood()
+            .then((message) => {
+                // here message is "Food is ready!" 
+                console.log(message);
+                return serveFood();
+            })
+            .then(() => {
+                console.log("Enjoy your meal!");
+            });
+    </script>
+
+<!-- i want to fetch data from an API with promises -->
+ <!-- Step 1: Create a function to fetch data from the API -->
+  <!-- Step 2:  calling fetch data-->
+
+    <!-- <script>
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                let success = true; // Simulating success or failure
+                if (!success) {
+                    reject("Error: Unable to fetch data from API.");
+                    return;
+                }
+                console.log("Fetching data from API...");
+                setTimeout(() => {
+                    const data = { id: 1, name: "John Doe" }; // Simulated API response
+                    resolve(data);
+                }, 1500); // 1.5 seconds delay
+            });
+        }
+
+        // Calling fetchData function
+        fetchData()
+            .then((data) => {
+                console.log("Data received from API:", data);
+            });
+    </script> -->
+
+<!--  i want to call below API using promise for handling data asynchronously -->
+  <!-- fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json)) -->
+ <!-- fetch and promise are used together to handle asynchronous operations in a more manageable way -->
+  <!-- fetch indirectly returns a promise that resolves to the Response object representing the response to the request -->
+<!-- fetch is defined in ES6 as well as in modern browsers supporting typescript  -->
+
+    <script>
+        function fetchTodo() {
+            return fetch('https://jsonplaceholder.typicode.com/todos')
+            // fetch() returns a promise that resolves to the Response object representing the response to the request
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                });
+        }
+
+        // Calling fetchTodo function
+        fetchTodo()
+            .then(data => {
+                console.log("Todo item fetched from API:", data);
+            })
+            .catch(error => {
+                console.error("There was a problem with the fetch operation:", error);
+            });
+    </script>
+
+
+<!-- In above demo Promise is used to handle asynchronous API calls so that we can manage the flow of data more effectively. -->
+
+<!-- Here we are using promises to handle asynchronous operations so that we can write cleaner and more manageable code. -->
+<!-- if we dont use promises, we would have to use callbacks, leading to "callback hell" ie  pyramid of doom -->
+ <!-- Advantage of promise is that it allows us to chain multiple asynchronous operations together, making the code more readable and easier to maintain. -->
+
+
+</body>
+</html>
