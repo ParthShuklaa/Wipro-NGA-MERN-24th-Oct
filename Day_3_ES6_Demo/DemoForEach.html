@@ -1,0 +1,29 @@
+<!-- classical difference between forEach and for loop is that forEach is a method that executes a provided function once for each array element, while a for loop is a control structure that allows repeated execution of a block of code as long as a specified condition is true. -->
+Example of forEach loop:  Ecommerce Product Listing, Displaying content based on collection 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Following steps we have to follow in order to implment forEach loop -->
+    <script>
+        // Creating a collection of products is Array of objects
+        const products = [
+            { id: 1, name: "Product 1", price: 100 },
+            { id: 2, name: "Product 2", price: 200 },
+            { id: 3, name: "Product 3", price: 300 }
+        ];
+// Using forEach loop to iterate over the products array and display product details
+        products.forEach(product => {
+            console.log(`Product Name: ${product.name}, Price: ${product.price}`);
+            // Displaying array content in HTML body
+            document.body.innerHTML += `<h2>${product.name}</h2><p>Price: $${product.price}</p>`;
+        });
+    </script>
+
+</body>
+</html>

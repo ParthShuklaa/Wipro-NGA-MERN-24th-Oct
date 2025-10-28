@@ -1,0 +1,52 @@
+<!-- API v/s REST API v/s Web API v/s SOAP -->
+<!-- REST API : Representational State Transfer Application Programming Interface -->
+<!-- Web API : Web API is a framework that makes it easy to build HTTP services that reach a broad range of clients, including browsers and mobile devices. -->
+<!-- SOAP : Simple Object Access Protocol : it is a protocol for exchanging structured information in the implementation of web services. -->
+ <!-- REST API : Representational State Transfer API : it is an architectural style that uses HTTP requests to access and use data. -->
+  <!-- Final objective of any API is to enable seamless communication between different software systems.
+   with reference Full stack application API helps us in connecting the frontend with the backend services, 
+   allowing for data exchange and functionality integration. -->
+<!-- REST API uses standard HTTP methods like GET, POST, PUT, DELETE to perform operations on resources identified by URLs. -->
+<!-- REST API typically returns data in JSON or XML format, making it easy for different systems to parse and understand the data. -->
+<!-- REST API is stateless, meaning each request from a client to the server must contain all the information needed to understand and process the request. -->
+<!-- Why API is future of software development? ans how it is being replaced via AI Agents  -->
+<!-- REST API is designed to be scalable and can handle a large number of requests from multiple clients simultaneously. -->
+
+
+<!-- following demo is based on 
+To demonstrate how to perform GET, POST, PUT, and DELETE operations on a REST API using Fetch API and Async/Await, display data dynamically on the web page using DOM manipulation, and handle errors gracefully. 
+-->
+<!-- We can implement following  HTTP methods using Fetch API  for https://jsonplaceholder.typicode.com/users-->
+
+<!-- GET/users : Retrieve data from a server
+     POST/users : Send data to a server to create a new resource
+     PUT/users/:id : Update an existing resource on the server
+     DELETE/users/:id : Remove a resource from the server -->
+
+     <!-- We will be using postman for testing these API endpoints -->
+
+
+<!-- Index.html code will be like below  -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h1>REST API Demo using Fetch API and Async/Await</h1>
+    <div id="user-list">
+        <h2>User List</h2>
+        <!-- User data will be dynamically inserted here -->
+    </div>
+
+    <button id="loadUsers">Load Users</button>
+    <button id="addUser">Add User</button>
+    <button id="updateUser">Update User</button>
+    <button id="deleteUser">Delete User</button>
+    
+    <script src="script.js"></script>
+    
+ </body>
+ </html>
