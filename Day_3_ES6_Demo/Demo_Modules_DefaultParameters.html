@@ -1,0 +1,65 @@
+<!-- IN Js/ES6 we have Default Parameters and Modules for supporting following scenarios  -->
+<!-- Default Parameters: It allows us to set default values for function parameters if no value or undefined is passed -->
+<!-- Example: -->
+<!-- function multiply(a, b = 1) { -->
+<!--     return a * b; -->
+<!-- } -->
+<!-- console.log(multiply(5)); // Output: 5 (b takes default value 1) -->
+ <!-- Just like default parameters, What is the use of constructor functions? -->
+
+<!-- Modules: It allows us to organize code into separate files and import/export functionalities between them -->
+ <!-- In ES6, we can use the `import` and `export` keywords to achieve this. -->
+<!-- Example: -->
+<!-- // In mathUtils.js, Student management system _ studentUtils.js( calculate Grade(),formatStudentInfo()) -->
+ <!-- DataStore.js for handling data related operations we can have getStudents() saveStudents()  -->
+<!-- validations.js for input validations -->
+ <!-- apiUtils.js for making API calls -->
+  <!-- stringUtils.js for string manipulation functions ex concatenate, split, substring etc -->
+
+<!-- export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+}
+<!-- // In main.js -->
+<!-- import { add, subtract } from './mathUtils.js';
+console.log(add(5, 3)); // Output: 8
+console.log(subtract(5, 3)); // Output: 2 --> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example of Default Parameters
+        function greet(name, greeting = "Hello") {
+            return `${greeting}, ${name}!`;
+        }
+        console.log(greet("Alice")); // Output: Hello, Alice!
+        console.log(greet("Bob", "Hi")); // Output: Hi, Bob!
+    </script>
+    <!-- reusing mathUtils.js  which is defined as a seprate file -->
+
+    <script type="module">
+        import { square, cube, factorial, power } from './math_Utils.js';
+        
+    // we want to display above results in the HTML body
+    
+        document.body.innerHTML += `<p>${greet("Alice")}</p>`;
+        // here we are calling greet function with both parameters and using += to append to existing content
+        document.body.innerHTML += `<p>${greet("Bob", "Hi")}</p>`;
+        document.body.innerHTML += `<p>${square(5)}</p>`;
+        document.body.innerHTML += `<p>${cube(5)}</p>`;
+        document.body.innerHTML += `<p>${factorial(5)}</p>`;
+        document.body.innerHTML += `<p>${power(2, 3)}</p>`;
+    </script>
+</body>
+</html>
+
+
