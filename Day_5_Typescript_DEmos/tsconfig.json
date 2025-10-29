@@ -1,0 +1,14 @@
+// For large projects we have to create a tsconfig.json file to define the root files and the compiler options required to compile 
+// the project.
+// Below are some compiler option 
+{
+  "compilerOptions": {
+    "target": "es6",                          
+    "module": "commonjs",                     
+    "strict": true,                           
+    "esModuleInterop": true,                  
+    "skipLibCheck": true,                      
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dis"
+  }
+}

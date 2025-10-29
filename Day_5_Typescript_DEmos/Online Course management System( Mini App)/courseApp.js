@@ -1,0 +1,180 @@
+"use strict";
+// // We have to implement following Problem Statement: “Online Course Management System (Mini App)”
+// You need to build a small TypeScript-based console app to manage online courses, instructors, and students.
+// The app should:
+// Store data using Maps, Arrays, and Tuples
+// Define structure using Interfaces
+// Use Enums for course categories
+// Demonstrate Iterators to loop through collections
+// Apply Decorators for logging actions
+// Use Type annotations, any type, and declarations appropriately
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CourseManager = exports.students = exports.instructors = exports.courses = exports.CourseCategory = void 0;
+exports.LogAction = LogAction;
+// Step 1: Create Enum for Course Categories
+var CourseCategory;
+(function (CourseCategory) {
+    CourseCategory["DEVELOPMENT"] = "Development";
+    CourseCategory["DESIGN"] = "Design";
+    CourseCategory["MARKETING"] = "Marketing";
+    CourseCategory["BUSINESS"] = "Business";
+})(CourseCategory || (exports.CourseCategory = CourseCategory = {}));
+//Step 3: Create Maps to store data
+//Map will help us in storing key value pairs where key will be id and value will be object of respective type
+exports.courses = new Map();
+exports.instructors = new Map();
+exports.students = new Map();
+// Step 4: Implement Decorator for logging actions where we will log method name and its arguments  
+function LogAction(target, propertyKey, descriptor) {
+    const originalMethod = descriptor.value;
+    descriptor.value = function (...args) {
+        console.log(`Action: ${propertyKey} called with arguments: ${JSON.stringify(args)}`);
+        return originalMethod.apply(this, args);
+    };
+    return descriptor;
+}
+// The above code sets up the foundational structures for the Online Course Management System mini app using TypeScript.
+// Decorators are applied to methods to log their calls and arguments. so that we can track actions performed in the system.
+// LogAction decorator is defined to log method calls and their arguments.
+// Further implementation would involve creating classes or functions to manage courses, instructors, and students,
+// utilizing the defined interfaces, enums, and data structures.
+// Step 5: Further implementation can be done by creating classes or functions to manage courses, instructors, and students
+// utilizing the defined interfaces, enums, and data structures.
+//Step 5: Example class to manage Courses with Decorator applied
+class CourseManager {
+    courseIdCounter = 1;
+    @LogAction // Applying Decorator to log method calls
+    createCourse(title, category, instructorId) {
+        //method to create a new course
+        const newCourse = {
+            id: this.courseIdCounter++,
+            title,
+            category,
+            instructorId,
+            studentIds: []
+        };
+        exports.courses.set(newCourse.id, newCourse);
+        return newCourse;
+    }
+    @LogAction
+    enrollStudent(courseId, studentId) {
+        const course = exports.courses.get(courseId);
+        const student = exports.students.get(studentId);
+        if (course && student) {
+            course.studentIds.push(studentId);
+            student.enrolledCourses.push(courseId);
+        }
+        else {
+            console.log("Course or Student not found!");
+        }
+    }
+    @LogAction
+    getCourseDetails(courseId) {
+        return exports.courses.get(courseId);
+    }
+    @LogAction
+    getAllCourses() {
+        return Array.from(exports.courses.values());
+    }
+    //Step 6: Implementing Iterator to loop through courses
+    *courseIterator() {
+        //generator function to iterate through courses where * indicates generator function and IterableIterator is the return type
+        for (const course of exports.courses.values()) {
+            yield course;
+        }
+    }
+    //Step 7: Further methods to manage instructors and students can be added similarly with appropriate decorators and logic
+    *instructorIterator() {
+        //generator function to iterate through instructors
+        for (const instructor of exports.instructors.values()) {
+            yield instructor;
+        }
+    }
+    *studentIterator() {
+        //generator function to iterate through students
+        for (const student of exports.students.values()) {
+            yield student;
+        }
+    }
+    //Step 8: Additional methods to add instructors and students with logging
+    @LogAction
+    addInstructor(name, expertise) {
+        const newInstructor = {
+            id: exports.instructors.size + 1,
+            name,
+            expertise
+        };
+        exports.instructors.set(newInstructor.id, newInstructor);
+        return newInstructor;
+    }
+    //Step 9: Method to add students with logging
+    @LogAction
+    addStudent(name) {
+        const newStudent = {
+            id: exports.students.size + 1,
+            name,
+            enrolledCourses: []
+        };
+        exports.students.set(newStudent.id, newStudent);
+        return newStudent;
+    }
+    //Step 10: Method to get student details with logging
+    @LogAction
+    getStudentDetails(studentId) {
+        return exports.students.get(studentId);
+    }
+    //Step 11: Method to get instructor details with logging
+    @LogAction
+    getInstructorDetails(instructorId) {
+        return exports.instructors.get(instructorId);
+    }
+    //Step 12: Method to get all instructors with logging
+    @LogAction
+    getAllInstructors() {
+        return Array.from(exports.instructors.values());
+    }
+    //Step 13: Print summary of all data
+    @LogAction
+    printSummary() {
+        console.log("Courses:", Array.from(exports.courses.values()));
+        console.log("Instructors:", Array.from(exports.instructors.values()));
+        console.log("Students:", Array.from(exports.students.values()));
+    }
+}
+exports.CourseManager = CourseManager;
+//end of CourseManager class with various methods to manage courses, instructors, and students
+//Demo execution can be done in a separate file where we can create an instance of CourseManager and call its methods to demonstrate functionality
+// Create an instance of CourseManager
+const courseManager = new CourseManager();
+// Example usage
+const instructor1 = courseManager.addInstructor("John Doe", [CourseCategory.DEVELOPMENT]);
+const student1 = courseManager.addStudent("Alice Smith");
+const course1 = courseManager.createCourse("TypeScript Basics", CourseCategory.DEVELOPMENT, instructor1.id);
+courseManager.enrollStudent(course1.id, student1.id);
+// Print summary
+courseManager.printSummary();
+// Fetch and display all courses
+const allCourses = courseManager.getAllCourses();
+console.log("All Courses:", allCourses);
+// Fetch and display course details 
+const courseDetails = courseManager.getCourseDetails(course1.id);
+console.log("Course Details:", courseDetails);
+// The above code demonstrates the creation of instructors, students, and courses,
+// as well as enrolling students in courses using the CourseManager class.
+// It also showcases the use of decorators for logging actions within the system.
+//iterators and generators can be implemented in various parts of the system as needed,
+// such as iterating over student enrollments or course lists, depending on further requirements.
+// StudentManager class can be implemented similarly to CourseManager
+// with methods to manage student-specific actions and data.
+// Decorator function to log method calls and their arguments
+function LogAction(target, propertyKey, descriptor) {
+    const originalMethod = descriptor.value;
+    descriptor.value = function (...args) {
+        console.log(`Action: ${propertyKey} called with arguments: ${JSON.stringify(args)}`);
+        return originalMethod.apply(this, args);
+    };
+    return descriptor;
+}
+// The LogAction decorator can be applied to methods in other classes
+// to log their calls and arguments for better traceability in the system.
+//# sourceMappingURL=courseApp.js.map
