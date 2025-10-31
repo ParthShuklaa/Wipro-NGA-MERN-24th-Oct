@@ -1,0 +1,116 @@
+<!-- Here we will connect to MongoDB Atlas, implementing CRUD operations on EduProDB which consists of courses and students, 
+ Instructor and enrollment collections -->
+
+ <!-- Step 1: Connect to MongoDB Atlas via Connection string  -->
+  <!-- Step 2: Implement CRUD operations -->
+    <!-- Step 3: Display data dynamically on the web page using DOM manipulation -->
+     <!-- Step 4: Implement search functionality -->
+      <!-- Step 5 Close the connection to MongoDB Atlas -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Adding bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Course Management System - MongoDB Atlas Demo</h1>
+        <div id="course-list" class="mt-4">
+            <!-- Course data will be dynamically inserted here -->
+        </div>
+
+        <!-- Creating a form where user can enter connection string at run time for connecting it with MongoDB Atlas -->
+        <form id="connection-form" class="mt-4">
+            <div class="form-group">
+                <label for="connection-string">MongoDB Atlas Connection String</label>
+                <input type="text" class="form-control" id="connection-string" placeholder="Enter your connection string">
+            </div>
+            <button type="submit" class="btn btn-primary">Connect</button>
+            <!-- Displaying the status of connection -->
+            <div id="connection-status" class="mt-2"></div>
+        </form>
+
+    Step 1: Connect to MongoDB Atlas via Connection string 
+    <script>
+        // const { MongoClient } = require('mongodb');
+        // // reaading connection string from the input form and updating connection string variable showing connected or not status
+        // const form = document.getElementById('connection-form');
+        // form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
+        //     const uri = document.getElementById('connection-string').value;
+        //     // Creating a new MongoClient instance with the provided connection string
+
+        //     const client = new MongoClient(uri);
+        //     const connectionStatus = document.getElementById('connection-status');
+
+        //     // Displaying the status of connection in case of sucessful conection or error  
+        //     connectionStatus.innerHTML = "Connecting to MongoDB Atlas...";
+
+        //     async function run() {
+        //         try {
+        //             await client.connect(); 
+        //             console.log("Connected to MongoDB Atlas");
+        //             connectionStatus.innerHTML = "Connected to MongoDB Atlas";
+        //         } catch (error) {
+        //             console.error("Error connecting to MongoDB Atlas:", error);
+        //             connectionStatus.innerHTML = "Error connecting to MongoDB Atlas";
+        //         }
+        //     }
+
+        // run();// calling the run function to establish the connection
+        
+
+        // Step 2: Implement CRUD operations via async and await functions as below
+        async function createCourse(course) {
+            const database = client.db('EduProDB');
+            const courses = database.collection('courses');
+            const result = await courses.insertOne(course);
+            console.log(`New course created with the following id: ${result.insertedId}`);
+        }
+        async function getCourses() { //read operation
+            const database = client.db('EduProDB');
+            const courses = database.collection('courses');
+            const courseList = await courses.find({}).toArray();
+            console.log("Courses:", courseList);
+            // Step 3: Display data dynamically on the web page using DOM manipulation
+            const courseContainer = document.getElementById('course-list');
+            courseContainer.innerHTML = '';
+            courseList.forEach(course => {
+                courseContainer.innerHTML += `<div class="card mb-2"><div class="card-body"><h5 class="card-title">${course.title}</h5><p class="card-text">${course.description}</p></div></div>`;
+            });
+        }
+        async function updateCourse(courseId, updatedData) {// updating 
+            const database = client.db('EduProDB');
+            const courses = database.collection('courses');
+            const result = await courses.updateOne({ _id: courseId }, { $set: updatedData });
+            console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+            console.log(`${result.modifiedCount} document(s) was/were updated.`);
+        }
+        async function deleteCourse(courseId) {
+            const database = client.db('EduProDB');
+            const courses = database.collection('courses');
+            const result = await courses.deleteOne({ _id: courseId });
+            console.log(`${result.deletedCount} document(s) was/were deleted.`);
+        }
+        // Step 5 Close the connection to MongoDB Atlas
+        async function closeConnection() {
+            await client.close();
+            console.log("Connection to MongoDB Atlas closed");
+        }   
+
+    </script>
+
+    <!-- Adding header and footer for the application via bootstrap -->
+    <footer class="mt-4">
+        <div class="container">
+            <p class="text-center">© 2025 Course Management System </p>
+        </div>
+    </footer>
+
+</body>
+</html>

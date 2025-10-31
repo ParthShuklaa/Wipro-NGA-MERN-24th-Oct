@@ -1,0 +1,15 @@
+In this demo we want to understand the process of Data modelling , data designing and other standard operations 
+
+Course Enrollment Management System using MongoDB
+Objective:
+To design and implement a MongoDB-based system for managing student enrollments, instructors, and courses in a university setup.
+The demo will be performed using MongoDB Compass (GUI) and optionally verified via Mongo Shell or VS Code MongoDB extension.
+
+Step 1: DataBase Design - Data Modelling
+        Database Name 
+        Collections and Their schemas 
+        CRUD operations 
+        Indexing and query optimization
+        Aggregation 
+Step 2:  Mongo DB Atlas ( Cloud hosting)
+        Free cluster (Shared)
