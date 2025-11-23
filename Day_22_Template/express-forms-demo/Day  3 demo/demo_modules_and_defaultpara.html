@@ -1,0 +1,51 @@
+
+<!--default parameter is when we don't pass argument to parameneter it takes default vakue or we say it allow us to set 
+default values for function para if no vslue or undefined passed   -->
+<!-- modules is use to oraganize the code into separate file with the felp of emport export functiooniltiy
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Parameter & Modules Example</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;"> deafaul parameter  and modules example</h1>
+    <div  id="output"></div>
+
+    <script type="module">
+
+        // import  function from modules_export_utils
+
+import{square , cube , factorial} from './modules_export_utils.js'
+ const outputDiv =document.getElementById("output");
+ outputDiv.innerHTML+=`<p> square is: ${square(5)}</p>`;
+  outputDiv.innerHTML += `<p>Cube(3): ${cube(3)}</p>`;
+        outputDiv.innerHTML += `<p>Factorial(5): ${factorial(5)}</p>`;
+
+
+ // deafault paramenter exapmle
+function concateString(x, y="babe"){
+    return x+y;
+}
+console.log(concateString("hii"));
+const result =concateString("hii");
+
+outputDiv.innerHTML+=`<p> conacatString : ${result}</p>`;
+
+// default para using object
+
+function objUser(user ={
+    name: "none" ,
+    age: 0
+}){
+    return `Name: ${user.name}, Age: ${user.age}`;
+}
+
+outputDiv.innerHTML+=`<p> ${objUser({name:"vihswas",age:23})}</p>`;
+
+    </script>
+</body>
+</html>

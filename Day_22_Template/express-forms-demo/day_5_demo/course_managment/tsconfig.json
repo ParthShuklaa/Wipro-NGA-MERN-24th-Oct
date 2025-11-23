@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+   
+    
+    "outDir": "./dist",          // ✅ compiled JS goes here
+    "rootDir": "./",             // ✅ root of TS files
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "exactOptionalPropertyTypes": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "emitDecoratorMetadata": false,
+    "useDefineForClassFields": false,
+    "moduleResolution": "node",
+    "skipLibCheck": true
+  },
+  "include": ["*.ts"],           // ✅ include all ts files in root
+  "exclude": ["node_modules", "dist"]
+}

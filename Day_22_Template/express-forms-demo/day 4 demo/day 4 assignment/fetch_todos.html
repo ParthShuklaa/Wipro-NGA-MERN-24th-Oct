@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> fetch data from api</h1>
+    
+    <button onclick="loadTodo()"> submit </button>
+    <div id="datacontaner"></div>
+    <script>
+        // fetch('https://jsonplaceholder.typicode.com/todos')
+        // .then(respone=>respone.json())
+        // .then(json=>console.log(json))
+        // Function to fetch todo items from the API
+ function fetchTodo(){
+    return fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response=>{
+        if(!response.ok){
+             throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    });
+ }
+ // Function to load and display todo items
+ function loadTodo(){
+  fetchTodo()
+  // Handle the fetched data
+        .then(data => {
+            const todoDiv = document.getElementById("datacontaner");
+            let output ="<ul>";
+                // Loop through the todo items and create list items
+            for (let i = 0; i < data.length; i++) {
+    const todo = data[i];
+    output += `<li>${todo.title} - Completed: ${todo.completed}</li>`;
+}
+// Close the unordered list
+output += "</ul>";
+todoDiv.innerHTML = output;
+            console.log("Todo items fetched from API:", data);
+        })
+        // Error handling for fetch operation
+        .catch(error => {
+            console.error("There was a problem with the fetch operation:", error);
+
+ });
+}
+    </script>
+    
+</body>
+</html>
+

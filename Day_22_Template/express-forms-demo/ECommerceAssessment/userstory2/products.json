@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "category": "Electronics",
+        "price": 99.99,
+        "image": "headphone.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Smart Watch",
+        "category": "Electronics",
+        "price": 199.99,
+        "image": "watch.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Laptop",
+        "category": "Electronics",
+        "price": 799.99,
+        "image": "laptop.jpg"
+    },
+    {
+        "id": 4,
+        "name": "T-Shirt",
+        "category": "Clothing",
+        "price": 19.99,
+        "image": "tshirt.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Jeans",
+        "category": "Clothing",
+        "price": 49.99,
+        "image": "jeans.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Book: JavaScript Guide",
+        "category": "Books",
+        "price": 29.99,
+        "image": "javascript book.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Garden Hose",
+        "category": "Home & Garden",
+        "price": 24.99,
+        "image": "garden hose.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Coffee Maker",
+        "category": "Home & Garden",
+        "price": 79.99,
+        "image": "coffee maker.jpg"
+    }
+]

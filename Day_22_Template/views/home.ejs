@@ -1,0 +1,34 @@
+<!-- in this file we define the HTML structure for the home page which will be used as template -->
+
+<h1> Welcome to home page <%= name %> </h1>
+<!-- here <%= name %> is used to dynamically insert the value of the variable 
+ 'name' passed from the server -->
+<p> This is the home page of our application. </p>
+<p> Current Year: <%= year %> </p>  
+
+
+<!-- Implemting for loops  -->
+<ul>
+  <% for(let i = 0; i < items.length; i++) { %>
+    <li><%= items[i] %></li>
+  <% } %>
+</ul>
+
+<!-- implemting if-else condition -->
+<% if(user) { %>
+  <p> Hello, <%= user %>! Welcome back!</p>
+<% } else { %>
+  <p> Hello, Guest! Please log in.</p>
+<% } %>
+
+<!-- implementing switch case -->
+<% switch(role) { %>
+  <% case 'admin': %>
+    <p> You have administrative privileges. </p>
+    <% break; %>
+  <% case 'user': %>
+    <p> You are logged in as a user. </p>
+    <% break; %>
+  <% default: %>
+    <p> You are browsing as a guest. </p>
+<% } %>

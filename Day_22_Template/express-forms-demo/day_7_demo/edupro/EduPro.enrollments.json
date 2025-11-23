@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6904663cde1d9a3172b99d00"
+  },
+  "studentId": "S101",
+  "courseId": "C101",
+  "instructorId": "I101",
+  "grade": "A"
+},
+{
+  "_id": {
+    "$oid": "6904663cde1d9a3172b99d01"
+  },
+  "studentId": "S102",
+  "courseId": "C102",
+  "instructorId": "I102",
+  "grade": "B"
+},
+{
+  "_id": {
+    "$oid": "6904663cde1d9a3172b99d02"
+  },
+  "studentId": "S101",
+  "courseId": "C102",
+  "instructorId": "I102",
+  "grade": "A"
+},
+{
+  "_id": {
+    "$oid": "6904663cde1d9a3172b99d03"
+  },
+  "studentId": "S103",
+  "courseId": "C103",
+  "instructorId": "I103",
+  "grade": "A"
+}]

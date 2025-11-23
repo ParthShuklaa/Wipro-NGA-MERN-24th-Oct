@@ -1,0 +1,20 @@
+{
+  "name": "day_5_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello_world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  
+    "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "typescript": "^5.9.3"
+  }
+ 
+  
+  }
+

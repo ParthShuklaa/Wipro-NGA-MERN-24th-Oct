@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+            name: "Vishwas",
+            age: 20,
+            major: "Computer Science"
+        };
+        const updatedStudent = {...student ,age:"23", Degree:"Bachelor's"};
+        console.log(updatedStudent);
+    </script>
+    
+    <script>
+        const cars =["Toyota", "Honda", "Ford"];
+        const moreCars =[...cars, "Chevrolet", "Nissan"];
+        console.log(moreCars);
+    </script>
+    <script>
+        function sum(a,b,c){
+            return a+b+c;
+        }
+        const numbers =[5,6,1];
+        console.log(sum(...numbers));
+    </script>
+    <script>
+    const sqrt = x =>x * x;
+    console.log(sqrt(5));
+    </script>
+    <script>
+    class Bikes{
+        constructor(brand ,name){
+            this.brand=brand;
+            this.name=name;
+        }
+        display(){
+            console.log(`Bike Brand: ${this.brand}, Bike Name: ${this.name}`);
+        }
+    }
+        const bikes= new Bikes("Yamaha", "FZ");
+        bikes.display();
+        alert('${bikes.brand},${bikes.name}');
+        
+    </script>
+    <script>
+        const cities = new Set();
+        cities.add("ujjain");
+        cities.add("indore");
+        cities.add("bhopal");
+        // console.log(cities);
+        console.log(cities);
+        cities.forEach(city => console.log(city));
+    //     cities.forEach((key,value)=>{
+    // console.log(key,value)
+    //     });
+    </script>
+
+</body>
+</html>

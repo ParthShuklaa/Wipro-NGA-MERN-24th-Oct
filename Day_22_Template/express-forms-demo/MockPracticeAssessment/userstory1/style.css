@@ -1,0 +1,58 @@
+/* Custom styles for Event Management Homepage */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff !important; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #f8f9fa;
+}
+
+.carousel-item img {
+     width: 40x;
+    height: px;
+   
+    /* object-fit: cover; */
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .carousel-item img {
+        height: 100px;
+    }
+}

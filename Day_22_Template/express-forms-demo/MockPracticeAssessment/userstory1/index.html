@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <h1>Event Management Company</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">Events</li>
+                    <li class="nav-item">Highlights</li>
+                    <li class="nav-item">Register</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="events" class="mb-5">
+            <h2>Upcoming Events</h2>
+            <div id="eventCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="download.png" class="d-block w-100" alt="Event 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Music Festival</h5>
+                            <p>Experience amazing live music</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="download.png" class="d-block w-100" alt="Event 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Music Festival</h5>
+                            <p>Experience amazing live music.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="download.jpg" class="d-block w-100" alt="Event 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Art Exhibition</h5>
+                            <p>Discover your art.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="highlights" class="mb-5">
+            <h2>Event Highlights</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Highlight+1" class="card-img-top" alt="Highlight 1">
+                        <div class="card-body">
+                            <h5 class="card-title">singing Opportunities</h5>
+                            <p class="card-text">Connect with best singers .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Highlight+2" class="card-img-top" alt="Highlight 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Expert Arcestra</h5>
+                            <p class="card-text"> experts in the field.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Highlight+3" class="card-img-top" alt="Highlight 3">
+                        <h5 class="card-title">Interactive Fest</h5>
+                        <p class="card-text"> selfies with artist.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register">
+            <h2>Register for Events</h2>
+            <form id="registrationForm" class="row g-3">
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2023 Event Management Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

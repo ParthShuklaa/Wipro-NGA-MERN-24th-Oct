@@ -1,0 +1,68 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MySql local",
+            "database": "EduPro",
+            "username": "root",
+            "password": "root",
+            "connectionTimeout": 30
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MySql local",
+            "database": "course_managment_edupro",
+            "username": "root",
+            "password": "root",
+            "connectionTimeout": 30
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "sql",
+            "database": "course_management_edupro",
+            "username": "root",
+            "password": "root",
+            "connectionTimeout": 30
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "localdb",
+            "database": "TechNovaDB",
+            "username": "root",
+            "password": "root",
+            "connectionTimeout": 30
+        }
+    ]
+}

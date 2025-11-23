@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Tech Conference 2023",
+        "category": "Tech",
+        "date": "2023-10-15",
+        "description": "Join us for the latest in technology.",
+        "image": "20210317161142.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Music Festival",
+        "category": "Music",
+        "date": "2023-11-20",
+        "description": "Experience amazing live music.",
+        "image": "download.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Art Exhibition",
+        "category": "Art",
+        "date": "2023-12-05",
+        "description": "Discover contemporary art.",
+        "image": "download.png"
+    },
+    {
+        "id": 4,
+        "title": "Web Development Workshop",
+        "category": "Tech",
+        "date": "2023-09-30",
+        "description": "Learn modern web development techniques.",
+        "image": "placeholder.png"
+    }
+]

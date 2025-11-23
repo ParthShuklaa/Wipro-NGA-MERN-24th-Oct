@@ -1,0 +1,50 @@
+body {
+  background-color: #f4f9f4;
+  font-family: Arial, sans-serif;
+}
+
+/* Logo */
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* Welcome section */
+.welcome-section {
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Contact box */
+.contact_us {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile and Courses */
+.profile, .courses {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .logo {
+    margin-bottom: 10px;
+  }
+}

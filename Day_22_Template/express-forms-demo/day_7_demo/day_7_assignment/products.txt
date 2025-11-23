@@ -1,0 +1,23 @@
+
+
+db.products.insertMany([
+  {
+    name: "iPhone 15",
+    category: "Smartphones",
+    price: 999,
+    stock: 50
+  },
+  {
+    name: "Sony Headphones",
+    category: "Audio",
+    price: 199,
+    stock: 100
+  }
+]);
+
+db.products.createIndex({ category: 1 }); 
+
+db.products.find({ category: "Smartphones" });
+
+
+

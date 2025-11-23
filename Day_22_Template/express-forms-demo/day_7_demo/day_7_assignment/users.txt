@@ -1,0 +1,10 @@
+db.users.insertMany([
+  { _id: 1, username: "vishwas", email: "vishwas@example.com", passwordHash: "<hashed>" },
+  { _id: 2, username: "harsh", email: "harsh@example.com", passwordHash: "<hashed>" }
+]);
+
+db.users.createIndex({ username: 1 }, { unique: true }); 
+
+db.users.findOne({ username: "vishwas", passwordHash: "<hashed>" });
+
+db.users.findOne({ username: "vishwas" });

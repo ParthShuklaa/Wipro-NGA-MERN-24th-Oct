@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "690466a8de1d9a3172b99d06"
+  },
+  "courseId": "C101",
+  "name": "Database Systems",
+  "credits": 3,
+  "department": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "690466a8de1d9a3172b99d07"
+  },
+  "courseId": "C102",
+  "name": "Data Structures",
+  "credits": 4,
+  "department": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "690466a8de1d9a3172b99d08"
+  },
+  "courseId": "C103",
+  "name": "Linear Algebra",
+  "credits": 3,
+  "department": "Mathematics"
+}]

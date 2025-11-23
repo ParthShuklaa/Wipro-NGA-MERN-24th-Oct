@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weather App Using Module Pattern</title>
+</head>
+<body>
+
+<h2>Weather App Using Module Pattern</h2>
+<input type="text" id="city" placeholder="Enter city name">
+<button id="btn">Get Weather</button>
+
+<div id="result"></div>
+
+<script type="module">
+    // Importing functions from the weather module
+import { fetchWeatherData, displayWeather, showError } from "./weather_modul.js";
+
+// Event listener for button click
+document.getElementById("btn").addEventListener("click", async () => {
+    const city = document.getElementById("city").value;
+// Validate input
+    if (!city.trim()) {
+        showError("Please enter a city name");
+        return;
+    }
+// Fetch and display weather data
+    try {
+        const data = await fetchWeatherData(city);
+        displayWeather(data);
+    } catch (error) {
+        console.error(error);
+        showError("City not found or API issue");
+    }
+});
+</script>
+
+</body>
+</html>

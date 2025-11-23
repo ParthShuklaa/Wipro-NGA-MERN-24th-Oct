@@ -1,0 +1,24 @@
+db.orders.insertMany([
+  {
+    userId: 1,
+    orderDate: ISODate("2025-10-31T12:00:00Z"),
+    products: [
+      { productId: 1, quantity: 1, price: 999 }
+    ],
+    totalCost: 999
+  },
+  {
+    userId: 2,
+    orderDate: ISODate("2025-10-30T16:30:00Z"),
+    products: [
+      { productId: 2, quantity: 2, price: 199 }
+    ],
+    totalCost: 398
+  }
+]);
+db.orders.createIndex({ userId: 1 });          
+
+db.orders.find({ userId: 1 });
+
+db.orders.find({ userId: 1 }).sort({ orderDate: -1 });
+

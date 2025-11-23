@@ -1,0 +1,33 @@
+db.Books.insertMany([
+  {
+   
+    "title": "1984",
+    "genre": "Dystopian",
+    "publicationYear": 1949,
+    "authorId": ObjectId("69079b20dda5fb3b80596092"),  
+    "ratings": [
+      { "user": "Alice Johnson", "score": 5, "comment": "A chilling masterpiece." }
+    ]
+  },
+  {
+   
+    "title": "Animal Farm",
+    "genre": "Political Satire",
+    "publicationYear": 1945,
+    "authorId": ObjectId("69079b20dda5fb3b80596093"),  
+    "ratings": [
+      { "user": "Clara Lee", "score": 5, "comment": "Brilliant allegory." }
+    ]
+  },
+  {
+   
+    "title": "Harry Potter and the Sorcerer’s Stone",
+    "genre": "Fantasy",
+    "publicationYear": 1997,
+    "authorId": ObjectId("69079b20dda5fb3b80596092"),  
+    "ratings": [
+      { "user": "Alice Johnson", "score": 5, "comment": "Magical and unforgettable." }
+    ]
+  }
+]
+);

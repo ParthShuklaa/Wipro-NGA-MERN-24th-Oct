@@ -1,0 +1,116 @@
+  <!-- Problem Description:
+Functional Requirements:
+Use of let and const:
+Declare course name and institute name using appropriate variable types (let for changeable, const for fixed).
+Use of Spread Operator (...):
+Create two arrays: coreSubjects and advancedSubjects.
+Merge them into one array allSubjects using the spread operator.
+Use of Arrow Function:
+Create an arrow function greet(name) that returns a personalized welcome message for the student.
+Use of Class:
+Define a class Student with properties: name, age, and skills.
+Include a method display() that returns formatted student details.
+Create at least two student objects and display their details dynamically.
+Use of Map Object:
+Create a Map to store student names as keys and their grades as values.
+Display the student names and corresponding grades.
+Use of Set Object:
+Create a Set containing student skills.
+Display only the unique skills (no duplicates).
+Dynamic Output Display:
+All results must be shown dynamically on a web page (not in alert or console only).
+A single button (e.g., “Run Assignment Demo“) should trigger the complete output display.
+
+<!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student managment</title>
+    <link rel="Stylesheet" href="app.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Student Management System</h1>
+    <h2 style="text-align: center;"> Click below button to see the assignment</h2>
+    <button onclick="runAssignment()" >Run runAssingment</button>
+    <div id="output" style="margin-top:20px; font-size:18px; " class="mt-4"></div>
+
+    
+    <script>
+        function runAssignment(){
+         const outputDiv1 = document.getElementById("output");
+              outputDiv1.innerHTML =""; // Clear previous output
+// Use of let and const
+            let courseName = "Mern Stack Development";
+            const instituteName = "great Learning";
+            const coreSubjects =["HTML", "CSS", "JavaScript","ES6"];
+            const advancedSubjects=["Node.js", "Express.js", "MongoDB"];
+            const allSubject=[...coreSubjects, ...advancedSubjects];
+          
+            // 
+            outputDiv1.innerHTML += ` <div class="card p-3 mb-3">
+            <h5 class="text-primary">Course Details</h5>
+            <p><strong>Course Name:</strong> ${courseName}</p>
+            <p><strong>Institute Name:</strong> ${instituteName}</p>
+            <p><strong>All Subjects:</strong> ${allSubject.join(", ")}</p>
+        </div>`;
+
+// Use of Arrow Function
+        const greet = (name) => `Welcome to the course ${courseName}, ${name}!`;
+
+            outputDiv1.innerHTML += ` <div class="card p-3 mb-3">
+            <h5 class="text-primary">Greeting</h5>
+            <p>${greet("Vishwas")}</p>
+        </div>`;
+
+// Use of Class
+            class Student{
+                constructor(name,age,skills){
+                    this.name=name;
+                    this.age=age;
+                    this.skills=skills;
+                }
+                display(){
+                    return `Student Name: ${this.name}, Age: ${this.age}, Skills: ${[...this.skills].join(", ")}`;
+                }
+            }
+            const student =new Student("Vishwas", 23 , ["HTML", "CSS", "JavaScript"]);
+            const student2 =new Student("John", 22 , ["Node.js", "Express.js", "MongoDB"]);
+            // display student details
+            outputDiv1.innerHTML +=  `
+        <div class="card p-3 mb-3">
+            <h5 class="text-primary">Students Information</h5>
+            <p>${student.display()}</p>
+            <p>${student2.display()}</p>
+        </div>`;
+            
+        
+        //  use of Map
+        
+        const sGrades = new Map();
+        let gradeText="";
+        sGrades.set("vishwas","A");
+        sGrades.set("john","B+");
+        sGrades.forEach((grade,name)=>{
+            gradeText += `${name} : ${grade}<br>`;
+        });
+         outputDiv1.innerHTML += `
+        <div class="card p-3 mb-3">
+            <h5 class="text-primary">Student Grades</h5>
+            <p>${gradeText}</p>
+        </div>`;
+
+        // use of set
+         const setUniqueSkills =new Set([...student.skills,...student2.skills]);
+ outputDiv1.innerHTML += `
+        <div class="card p-3 mb-3">
+            <h5 class="text-primary">Unique Skills (No Duplicates)</h5>
+            <p>${[...setUniqueSkills].join(", ")}</p>
+        </div>`;
+
+    }
+
+    </script>
+
+</body>
+</html>

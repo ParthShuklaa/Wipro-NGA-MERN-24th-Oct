@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "69079b20dda5fb3b80596092"
+  },
+  "name": "vishwas",
+  "nationality": "indian",
+  "birthYear": 2002
+},
+{
+  "_id": {
+    "$oid": "69079b20dda5fb3b80596093"
+  },
+  "name": "jony",
+  "nationality": "america",
+  "birthYear": 2000
+},
+{
+  "_id": {
+    "$oid": "69079b20dda5fb3b80596094"
+  },
+  "name": "don",
+  "nationality": "russia",
+  "birthYear": 1995
+}]

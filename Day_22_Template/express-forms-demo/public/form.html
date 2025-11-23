@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Form Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 0;
+        }
+        form {
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #bbb;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #0078ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .success, .error {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #e1f7e1;
+            color: #0a7a0a;
+        }
+        .error {
+            background-color: #ffe4e4;
+            color: #a10707;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Contact Form</h2>
+
+    <form id="contactForm" action="/submit-form" method="POST">
+
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required />
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required />
+
+        <label>Message</label>
+        <textarea name="message" rows="4" placeholder="Your message here..." required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        // Optional: AJAX-based form submission for better UX
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); // prevents full page reload
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const resBox = document.getElementById("response");
+            resBox.innerHTML = "Submitting...";
+
+            try {
+                const response = await fetch("/submit-form", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    resBox.innerHTML = `<div class="success">${result.message}</div>`;
+                    form.reset();
+                } else {
+                    const msg = result.errors ? result.errors.map(e => e.msg).join("<br>") : result.error;
+                    resBox.innerHTML = `<div class="error">${msg}</div>`;
+                }
+
+            } catch (err) {
+                resBox.innerHTML = `<div class="error">Something went wrong!</div>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

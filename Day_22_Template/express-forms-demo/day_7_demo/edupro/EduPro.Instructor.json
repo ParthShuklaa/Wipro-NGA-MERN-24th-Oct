@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "690465d9de1d9a3172b99cfb"
+  },
+  "instructorId": "I101",
+  "name": "Dr. Mehta",
+  "department": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "690465d9de1d9a3172b99cfc"
+  },
+  "instructorId": "I102",
+  "name": "Dr. Sharma",
+  "department": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "690465d9de1d9a3172b99cfd"
+  },
+  "instructorId": "I103",
+  "name": "Dr. Rao",
+  "department": "Mathematics"
+}]

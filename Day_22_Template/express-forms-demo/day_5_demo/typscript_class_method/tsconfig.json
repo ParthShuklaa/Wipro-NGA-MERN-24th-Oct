@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",                          
+    "strict": true,                           
+    "esModuleInterop": true,                  
+    "skipLibCheck": true,                      
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dis",
+    "noEmitOnError": false,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "verbatimModuleSyntax": false
+  },
+  "include": ["./**/*.ts"]  // this will include all typescript files in the current folder and its subfolders
+}

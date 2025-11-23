@@ -1,0 +1,31 @@
+// // import person class and student class
+// import { Person, Student } from "./person.js";
+// let student1=new Student("Vishwas",23,"Wipro",["MERN","JAVA"]);
+// console.log(student1.getstudentInfo());
+// student1.addCourse("Full Stack Development");
+// console.log(student1.getstudentInfo());
+// console.log("Total Persons Created: "+Student.getCounter());
+// // creating object of person class and student class
+// let person1=new Person("voshwas",23,"SVIT");
+// console.log(person1.greet());
+// // accessing protected member using method
+// console.log("Age of person1 is: "+person1.getAge());
+// // accessing private member using method
+// console.log("Id of person1 is: "+person1.showId());
+// // accessing public member directly
+// console.log("Name of person1 is: "+person1.name);
+import { Person, Student } from "./person.js";
+const outputDiv = document.getElementById("output");
+function print(msg) {
+    outputDiv.innerHTML += msg + "<br>";
+}
+let student1 = new Student("Vishwas", 23, "Wipro", ["MERN", "JAVA"]);
+print(student1.getstudentInfo());
+student1.addCourse("Full Stack Development");
+print(student1.getstudentInfo());
+print("Total Persons Created: " + Student.getCounter());
+let person1 = new Person("Vishwas", 23, "SVIT");
+print(person1.greet());
+print("Age of person1 is: " + person1.getAge());
+print("Id of person1 is: " + person1.showId());
+print("Name of person1 is: " + person1.name);

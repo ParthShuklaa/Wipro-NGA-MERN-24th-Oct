@@ -1,0 +1,60 @@
+<!-- here we code for registration -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Spring Flower School</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header class="bg-success text-white py-3">
+      <div class="container d-flex justify-content-left align-items-center">
+     <img src="school logo.jpg" alt="School Logo" class="logo me-3">
+     <h1 class="fs-3 m-0">Spring Flower School</h1>
+      <div class="ms-auto">
+     <a href="login.html" class="btn btn-light btn-sm mx-2">Login</a>
+      </div>
+      </div>
+    </header>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow justify-content-center align-items-center" style="width:400px;">
+            <h2 class="text-center-mb-4">Register</h2>
+            <form>
+                <div class="mb-3">
+                    <label  for="regName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="regName">
+                </div>
+                <div class="mb-3">
+                    <label for="regEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="regEmail" aria-describedby="emailHelp">
+                    <div id="regEmail" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="regPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="regPassword">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="regCourse">Select Course</label>
+                    <select class="form-select" id="regCourse" required>
+                        <option value="">Choose...</option>
+                        <option>MERN Development</option>
+                        <option>Data Science</option>
+                        <option>Cyber Security</option>
+                        <option>AI & ML</option>
+                    </select>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div for ="registerBtn">
+                <button type="submit" class="btn btn-success w-100" id="registerBtn">Register</button>
+            </form>
+    
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+            

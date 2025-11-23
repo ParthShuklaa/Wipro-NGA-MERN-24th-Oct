@@ -1,0 +1,53 @@
+<!-- use of promises demo -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // promises demo using customer waiter exapmle
+ function orderFood(){
+    return new Promise((resolve,reject)=>{
+        console.log("you order something to eat");
+        setTimeout(() => {
+console.log("food is preparing");
+
+ resolve("food is ready");
+
+        },2000);
+    });
+ }
+ function serveFood(){
+    return new Promise((resolve)=>{
+        setTimeout(() => {
+        console.log("waiter briengs you food");
+        resolve();
+
+    },1000);
+
+ });
+}
+
+ orderFood() 
+ .then((message)=>{
+    console.log(message);
+    return serveFood();
+ })
+ .then(()=>{
+    console.log("enjoy your meal")
+ });
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>

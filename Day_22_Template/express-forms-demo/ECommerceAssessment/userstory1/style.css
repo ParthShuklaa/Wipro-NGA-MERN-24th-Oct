@@ -1,0 +1,33 @@
+/* Custom CSS styles for the E-Commerce Product Portal */
+
+/* Styles for product cards with hover effects */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the newsletter section */
+.newsletter {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+/* Global body styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header title styles */
+header h1 {
+    margin: 0;
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto;
+}

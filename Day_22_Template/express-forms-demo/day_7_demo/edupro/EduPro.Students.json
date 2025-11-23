@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "69046596de1d9a3172b99cf1"
+  },
+  "studentId": "S101",
+  "name": "Asha Gupta",
+  "email": "asha@edupro.edu",
+  "department": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "69046596de1d9a3172b99cf2"
+  },
+  "studentId": "S102",
+  "name": "Raj Verma",
+  "email": "rajverma1.edu",
+  "department": "Computer Science"
+},
+{
+  "_id": {
+    "$oid": "69046596de1d9a3172b99cf3"
+  },
+  "studentId": "S103",
+  "name": "Meena Rao",
+  "email": "meena@edupro.edu",
+  "department": "Mathematics"
+}]

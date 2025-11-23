@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "6907a60a1ee35d232989d5ca"
+  },
+  "title": "1984",
+  "genre": "Dystopian",
+  "publicationYear": 1949,
+  "authorId": {
+    "$oid": "69079b20dda5fb3b80596092"
+  },
+  "ratings": [
+    {
+      "user": "vishu",
+      "score": 5,
+      "comment": "A chilling masterpiece."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6907a60a1ee35d232989d5cb"
+  },
+  "title": "Animal Farm",
+  "genre": "Political Satire",
+  "publicationYear": 1945,
+  "authorId": {
+    "$oid": "69079b20dda5fb3b80596093"
+  },
+  "ratings": [
+    {
+      "user": "yash",
+      "score": 5,
+      "comment": "Brilliant allegory."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6907a60a1ee35d232989d5cc"
+  },
+  "title": "Harry Potter and the Sorcerer’s Stone",
+  "genre": "Fantasy",
+  "publicationYear": 1997,
+  "authorId": {
+    "$oid": "69079b20dda5fb3b80596092"
+  },
+  "ratings": [
+    {
+      "user": "vishu",
+      "score": 5,
+      "comment": "Magical and unforgettable."
+    }
+  ]
+}]
