@@ -30,3 +30,5 @@ This demo project showcases various HTML and CSS features through practical exam
     <!-- Content goes here -->
 </body>
 </html>
+
+![Parth's GitHub stats](https://github-readme-stats.vercel.app/api?username=ParthShuklaa&show_icons=true)
